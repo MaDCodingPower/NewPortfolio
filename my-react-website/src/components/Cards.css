@@ -12,18 +12,20 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 1120px;
+    /* max-width: 1120px; */
     width: 90%;
     margin: 0 auto;
   }
   
   .cards__wrapper {
     position: relative;
+    width: 100%;
     margin: 50px 0 45px;
   }
   
   .cards__items {
     margin-bottom: 24px;
+    align-items: center;
   }
   
   .cards__item {
@@ -31,13 +33,16 @@
     flex: 1;
     margin: 0 1rem;
     border-radius: 10px;
+    width: 100%;
+    /* max-width: 40vh; */
+    min-width: 30%;
   }
   
   .cards__item__link {
     display: flex;
     flex-flow: column;
     width: 100%;
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.3);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     border-radius: 10px;
@@ -64,10 +69,10 @@
     margin-left: 10px;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
-    color: #fff;
-    background-color: #1f98f4;
+    color: #e2d8c7;
+    background-color: #115a1d;
     box-sizing: border-box;
   }
   
@@ -98,6 +103,7 @@
     color: #252e48;
     font-size: 18px;
     line-height: 24px;
+    text-align: center;
   }
   
   @media only screen and (min-width: 1200px) {
@@ -110,7 +116,31 @@
     .cards__items {
       display: flex;
     }
+    .cards__container {
+      max-width: 80%;
+    }
   }
+
+  @media screen and  (max-width: 1024px) {
+    .cards__container {
+      max-width: 80%;
+    }
+    .cards__item__pic-wrap::after {
+      content: attr(data-category);
+      position: absolute;
+      bottom: 0;
+      margin-left: 10px;
+      padding: 12px 15px;
+      border-radius: 5px 5px 0 0;
+      max-width: calc((100%) - 60px);
+      font-size: 16px;
+      font-weight: 700;
+      color: #e2d8c7;
+      background-color: #115a1d;
+      box-sizing: border-box;
+    }
+  }
+
   
   @media only screen and (max-width: 1024px) {
     .cards__item {

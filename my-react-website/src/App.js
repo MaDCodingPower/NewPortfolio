@@ -2,7 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home'
+import Home from './components/pages/Home';
+import Projects from './components/pages/Projects';
+import About from './components/pages/About';
 
 function App() {
   return (
@@ -10,9 +12,9 @@ function App() {
       <Router>
       <Navbar />
         <Routes>
-          <Route exact path='/' element={<Home/>}>
-
-          </Route>
+          <Route exact path='/' element={<Home/>}/>
+          <Route  path='/projects' element={<Projects/>}/>
+          <Route  path='/about' element={<About/>}/>
         </Routes>
       </Router>
     </>
